@@ -9,6 +9,15 @@ public class Waker {
 		t.interrupt();
 		t.join();
 		System.out.println("Sleeping done");
+		
+		System.out.println("Running looper:");
+		Looper looper = new Looper();
+		Thread t2 = new Thread(looper);
+		t2.start();
+		Thread.sleep(500);
+		t2.interrupt();
+		t2.join();
+		System.out.println("Loop stopped successfully");
 	}
 
 }
